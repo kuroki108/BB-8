@@ -1,0 +1,32 @@
+# --- Python generierte Dateien ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# --- Distribution / Packaging ---
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# --- Virtuelle Umgebungen ---
+env/
+venv/
+.venv/
+
+# --- IDE / Editor Dateien ---
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# --- Logs & Caches ---
+*.log
+*.pot
+*.mo
+*.sqlite3
+
+# --- Secrets / Config ---
+.env
