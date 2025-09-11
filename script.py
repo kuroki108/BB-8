@@ -1,12 +1,13 @@
 import discord
 from discord.ext import commands
-import film 
+import film as film 
 from film import *
-import time
 import random
 import asyncio
 import os
+import json
 from dotenv import load_dotenv
+from discord.errors import LoginFailure
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
@@ -23,10 +24,10 @@ random_film = random.choice(data["Films"])
 @bot.command()
 async def watch(ctx):
     await ctx.send('Welchen Film wir wohl heute schauen werden?')
-    time.sleep(1)
+    await asyncio.sleep(1)
     film.main_film()
     await ctx.send('Die Antwort ist dum dum dum...')
-    time.sleep(3)
+    await asyncio.sleep(3)
     await ctx.send(f"---------{random_film['titel']}---------")
 
 
@@ -75,4 +76,16 @@ async def rpc(ctx):
 
 
 
-bot.run(TOKEN)
+if not TOKEN:
+    raise RuntimeError(
+        "Environment variable DISCORD_TOKEN is missing. Set it in .env or Docker Compose."
+    )
+
+try:
+    bot.run(TOKEN)
+except LoginFailure:
+    # Invalid token -> provide a clear, actionable message
+    raise SystemExit(
+        "Login failed: Your DISCORD_TOKEN appears to be invalid. "
+        "Create a new bot token in the Discord Developer Portal and update your .env."
+    )

@@ -30,3 +30,33 @@ Bored? BB-8 will think of a number, and you’ll try to guess it. If you win, he
 2. Add your Discord token.
 3. Run BB-8.
 4. Try not to fall in love.
+
+---
+
+## 🐳 Docker
+
+### Prepare
+
+1. Create an `.env` file in the project root with:
+
+```
+DISCORD_TOKEN=your-token-here
+```
+
+2. Build and run with Docker Compose:
+
+```
+docker compose up -d --build
+```
+
+3. View logs:
+
+```
+docker compose logs -f
+```
+
+4. Stop the bot:
+
+```
+docker compose down
+```

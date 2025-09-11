@@ -1,5 +1,5 @@
 import discord
-import film
+import film as film
 import os
 from dotenv import load_dotenv
 
@@ -17,5 +17,3 @@ intents.message_content = True
 client = MyClient(intents=intents)
 
 client.run(TOKEN)
-
-
