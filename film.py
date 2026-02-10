@@ -1,11 +1,9 @@
-import random 
+import random
 import json
 
-def main_film():
+def get_random_film():
+    # Gibt einen zufälligen Film aus film.json zurück.
+
     with open('film.json', 'r', encoding='utf-8') as f:
         data = json.load(f)
-
-    random_film = random.choice(data["Films"])
-
-
-main_film()
+    return random.choice(data["Films"])
