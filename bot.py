@@ -22,7 +22,7 @@ with open('film.json', 'r', encoding='utf-8') as f:
 
 @bot.command()
 async def watch(ctx):
-    random_film = random.choice(data["Films"])  # Jedes Mal ein neuer Film!
+    random_film = random.choice(data["titles"])  # Jedes Mal ein neuer Film!
     await ctx.send('Welchen Film wir wohl heute schauen werden?')
     await asyncio.sleep(1)
     await ctx.send('Die Antwort ist dum dum dum...')
