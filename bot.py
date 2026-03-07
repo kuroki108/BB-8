@@ -28,10 +28,16 @@ async def watch(ctx):
     await ctx.send('Die Antwort ist dum dum dum...')
     await asyncio.sleep(3)
     await ctx.send(f"---------{random_film['titel']}---------")
+    await ctx.send(f"Genre: {random_film['genre']}")
 
 
 
 if __name__ == "__main__":
+    if not TOKEN:
+        raise SystemExit(
+            "DISCORD_TOKEN environment variable is not set. "
+            "Please add it to your .env file."
+        )
     try:
         bot.run(TOKEN)
     except LoginFailure:
