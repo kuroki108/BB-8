@@ -7,3 +7,4 @@ def get_random_film():
     with open('film.json', 'r', encoding='utf-8') as f:
         data = json.load(f)
     return random.choice(data["titles"])
+

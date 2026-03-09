@@ -28,7 +28,7 @@ async def watch(ctx):
     await ctx.send('Die Antwort ist dum dum dum...')
     await asyncio.sleep(3)
     await ctx.send(f"---------{random_film['titel']}---------")
-    await ctx.send(f"Genre: {random_film['genres']}")
+    await ctx.send(f"Genres: {random_film['genres']}")
 
 
 
